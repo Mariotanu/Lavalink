@@ -9,6 +9,6 @@ RUN apt-get update && apt-get install -y curl && \
 # Copy your config file into container
 COPY application.yml .
 
-EXPOSE 2333
+EXPOSE 443
 
 CMD ["java", "-jar", "Lavalink.jar"]
