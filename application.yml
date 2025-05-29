@@ -1,0 +1,27 @@
+server:
+  port: 2333
+  address: 0.0.0.0
+
+lavalink:
+  server:
+    password: tanu
+    sources:
+      youtube: true
+      soundcloud: false
+      bandcamp: true
+      twitch: true
+      vimeo: true
+      http: true
+      local: true
+    bufferDurationMs: 400
+    frameBufferDurationMs: 5000
+    youtubeSearchEnabled: true
+    youtubePlaylistLoadLimit: 6
+
+metrics:
+  prometheus:
+    enabled: false
+
+logging:
+  level:
+    root: INFO
