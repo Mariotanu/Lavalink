@@ -1,16 +1,12 @@
-FROM openjdk:17-jdk-alpine
+FROM openjdk:17-jdk-slim
 
-RUN apk add --no-cache git curl bash
-
-# Create working directory
 WORKDIR /app
 
-# Download Lavalink
-RUN git clone https://github.com/freyacodes/Lavalink.git . && \
-    ./gradlew build && \
-    mvLavalink/build/libs/Lavalink.jar .
+# Download latest Lavalink.jar release from GitHub directly
+RUN apt-get update && apt-get install -y curl && \
+    curl -Lo Lavalink.jar https://github.com/freyacodes/Lavalink/releases/latest/download/Lavalink.jar
 
-# Copy config
+# Copy your config file into container
 COPY application.yml .
 
 EXPOSE 2333
